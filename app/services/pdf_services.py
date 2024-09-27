@@ -11,6 +11,7 @@ load_dotenv(".env")
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
+
 generation_config = {
     "temperature": 0.6,
     "top_k": 0,
@@ -23,7 +24,7 @@ safety_settings={
     HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
 }
 
-model_name = 'gemini-1.5-flash'
+model_name = "gemini-1.5-flash"
 
 model = genai.GenerativeModel(
     model_name = model_name,
