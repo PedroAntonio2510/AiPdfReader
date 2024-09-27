@@ -6,7 +6,7 @@ from pymongo.errors import PyMongoError
 
 load_dotenv(".env")
 
-username = os.getenv("DB_USERNAME")  # Substitua pelo seu nome de usuário
+username = os.getenv("DB_USERNAME") 
 password = os.getenv("DB_PASSWORD")
 
 client = MongoClient(f"mongodb+srv://{username}:{password}@cluster0.8mxqa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
