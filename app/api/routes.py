@@ -2,6 +2,7 @@ from fastapi import APIRouter, UploadFile, File, HTTPException, Form
 from fastapi.responses import JSONResponse
 from app.services.pdf_services import model, extract_text_from_pdf
 import google.generativeai as genai
+from app.config.database import save_on_db
 
 
 router = APIRouter()
@@ -23,6 +24,14 @@ async def upload_file(file: UploadFile = File(...), question: str = Form(...) ):
             pdf_file = extract_text_from_pdf(content)
             
             response = model.generate_content([question, pdf_file])
+            
+            question_doc = {
+                "question": question,
+                "content": pdf_file,
+                "answer": response.text if hasattr(response, 'text') else str(response)
+            }
+            
+            save_on_db(question_doc)
             
             return {"content": pdf_file, "answer": response.text}
 

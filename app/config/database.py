@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from pymongo import MongoClient
+from pymongo.errors import PyMongoError
 
 
 load_dotenv(".env")
@@ -12,4 +13,10 @@ client = MongoClient(f"mongodb+srv://{username}:{password}@cluster0.8mxqa.mongod
 
 db = client["AiPdf_db"]
 
+def save_on_db(question_doc):
+        try:
+            db.questions.insert_one(question_doc)
+            print("Saved sucessfully")
+        except PyMongoError as e:
+            raise Exception(f"Error on adding to database: {str(e)}")
 
