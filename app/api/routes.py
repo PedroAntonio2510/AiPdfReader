@@ -2,7 +2,7 @@ from fastapi import APIRouter, UploadFile, File, HTTPException, Form
 from fastapi.responses import JSONResponse
 from app.services.pdf_services import model, extract_text_from_pdf
 import google.generativeai as genai
-from app.config.database import save_on_db
+from app.config.database import save_on_db, db
 
 
 router = APIRouter()
@@ -26,6 +26,7 @@ async def upload_file(file: UploadFile = File(...), question: str = Form(...) ):
             response = model.generate_content([question, pdf_file])
             
             question_doc = {
+                "name": file.filename,
                 "question": question,
                 "content": pdf_file,
                 "answer": response.text if hasattr(response, 'text') else str(response)
@@ -37,3 +38,4 @@ async def upload_file(file: UploadFile = File(...), question: str = Form(...) ):
 
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Error reading PDF: {str(e)}")
+        
