@@ -14,7 +14,7 @@
  - Git
  - python-dotenv
 
- ### Guia
+ ### Guia de Instalação
 
  #### Utilize o git clone no seu terminal para clonar o repositorio, e clone dentro da sua pasta desejada.
 
@@ -35,21 +35,27 @@ pip install python-dotenv
     DB_USERNAME="<your-username>"
     DB_PASSWORD="<your-password>"
 #
-    Links para pegar os dados do mongodb e a api do gemini: https://cloud.mongodb.com/v2#/org/66f6e1c60886094f0a351a91/projects
-    https://aistudio.google.com/app/prompts/new_chat
+## Links: 
+https://cloud.mongodb.com/v2#/org/66f6e1c60886094f0a351a91/projects
+
+https://aistudio.google.com/app/prompts/new_chat
 
 
- #### Entre na pasta do repositorio pelo terminal utilizando cd AiPdfReader, ou abra direto na sua IDE e acesse pelo terminal da IDE. Utilize os comandos docker na seguinte sequencia:
+ #### Entre na pasta do repositorio e utilize os comandos docker na seguinte sequencia:
 
  ```bash
-docker build -t fastapi-aipdf . 
+docker build -t <nome-da-imagem> . 
 
-docker run -d -p 8000:8000 fastapi-aipdf
+docker run -d -p 8000:8000 <nome-da-imagem>
 
  ```
 
- ### Acesse a porta: 
+### Guia de Uso
+ 
+## Acesse a porta: 
   - http://localhost:8000/
+
+### Dentro da porta acesse a rota /file/upload e clique em Try it out, faca o upload do arquivo PDF e a pergunta sobre, ira retornar uma resposta em formato JSON, com o conteudo do pdf e a resposta da pergunta feita. 
 
 
 
