@@ -1,9 +1,9 @@
 # AiPdfReader
 
 ## Descricao
-    - Api em que o usuario ira fazer o upload de um arquivo PDF, e a IA generativa(No projeto esta sendo utilizado o Gemini) irá ler o pdf e poderá fazer uma pergunta sobre o pdf que foi realizado o upload.
+    Api em que o usuario ira fazer o upload de um arquivo PDF, e a IA generativa(No projeto esta sendo utilizado o Gemini) irá ler o pdf e poderá fazer uma pergunta sobre o pdf que foi realizado o upload.
 
-    - A api foi contruída utilizando FastApi, MongoDB para armazenar os nomes dos PDFs, conteúdo do pdf, a pergunta feita, e a resposta da Ia.
+    A api foi contruída utilizando FastApi, MongoDB para armazenar os nomes dos PDFs, conteúdo do pdf, a pergunta feita, e a resposta da Ia.
 
 ## Instrução de instalacão
 
