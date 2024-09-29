@@ -50,9 +50,9 @@ docker run -d -p 8000:8000 <nome-da-imagem>
 
  ```
 
-### Guia de Uso
+## Guia de Uso
  
-## Acesse a porta: 
+### Acesse a porta: 
   - http://localhost:8000/
 
 ### Dentro da porta acesse a rota /file/upload e clique em Try it out, faca o upload do arquivo PDF e a pergunta sobre, ira retornar uma resposta em formato JSON, com o conteudo do pdf e a resposta da pergunta feita. 
